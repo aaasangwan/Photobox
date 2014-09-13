@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dbms
+  api_key: '929415813779859'
+  api_secret: WDc_N2BDh0MJPjvkzy8ncTNT374
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dbms
+  api_key: '929415813779859'
+  api_secret: WDc_N2BDh0MJPjvkzy8ncTNT374
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dbms
+  api_key: '929415813779859'
+  api_secret: WDc_N2BDh0MJPjvkzy8ncTNT374
+  enhance_image_tag: true
+  static_image_support: false
