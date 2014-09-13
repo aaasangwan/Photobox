@@ -1,5 +1,5 @@
 class ImageController < ApplicationController
-	# This is prevent csrf warning
+	# This is to prevent csrf warning
   skip_before_filter :verify_authenticity_token, only: [:add_image]
 
   def uploader
@@ -10,7 +10,8 @@ class ImageController < ApplicationController
 	image_url = params['url']
 	name = image_url.split("/").last.split(".").first  	
 	@u = Image.new(name: name, url: image_url)
-	@u.save!
+	p @u.save!
+	render nothing: true
 	# Run rails c and check for Image.all.last
   end
 end

@@ -5,7 +5,7 @@ development:
     default:
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      database: dbms_development
+      database: photobox_development
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
       hosts:
@@ -58,7 +58,7 @@ development:
 test:
   sessions:
     default:
-      database: dbms_test
+      database: photobox_test
       hosts:
         - localhost:27017
       options:
@@ -68,13 +68,9 @@ test:
         max_retries: 1
         retry_interval: 0
 production:
-  identity_map_enabled: true #for eager loading to work
   sessions:
     default:
-      hosts: 
-        - ds035270.mongolab.com:35270
-      database: photobox
-      username: thestrongenough
-      password: abcd
-  options:
-    raise_not_found_error: false
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
