@@ -9,7 +9,7 @@ class ImageController < ApplicationController
 
   end
   def index
-  	#@images = Image.all
+  	@images = Image.all
   	#render_template (:file => "#{Rails.root}/app/views/image/index")
   end
 
