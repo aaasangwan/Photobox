@@ -3,8 +3,8 @@ Photobox::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   post 'image/add' => 'image#add_image'
-  # You can have the root of your site routed with "root"
-  get "image/index"
+  get 'image/show' => 'image#show'
+  get "image/index" => 'image#index'
   root "image#index"
 
   # Example of regular route:
