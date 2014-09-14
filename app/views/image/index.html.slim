@@ -1,2 +1,9 @@
-.page-header
+.page-header#header
   h1 Photos
+.container
+    .row
+        ul
+            - @images.each do |image|
+                li.span3
+                    = link_to image.url, class: "thumbnail"
+                        = image_tag(image.url, id: "image")
