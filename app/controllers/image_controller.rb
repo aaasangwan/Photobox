@@ -23,6 +23,7 @@ class ImageController < ApplicationController
 
   def show
   	@images = Image.all
-    
+    image = @images.map{|image|{name: image.name, url: image.url}}
+    render json: image
   end
 end
