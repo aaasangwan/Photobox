@@ -2,9 +2,10 @@ Photobox::Application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  post 'image/add' => 'image#add_image'
+  #post 'image/add' => 'image#add_image'
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get "image/index"
+  root 'image#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
