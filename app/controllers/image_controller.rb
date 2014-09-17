@@ -2,8 +2,17 @@ class ImageController < ApplicationController
 	# This is to prevent csrf warning
   skip_before_filter :verify_authenticity_token, only: [:add_image]
 
-  def uploader
-
+  def upload
+    @image = Image.new
+    if request.post? && !params[:image][:picture].nil?
+      temp_path = params[:image][:picture].tempfile
+      upload = Cloudinary::Uploader.upload(temp_path)
+      p image_url = upload["url"]
+      p name = image_url.split("/").last.split(".").first
+      @u = Image.new(name: name, url: image_url)
+      p @u.save!
+      render html: "Sucessfull"
+    end
   end
 
   def index
