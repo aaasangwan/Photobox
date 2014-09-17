@@ -1,0 +1,7 @@
+.page-header#header
+  h2 Upload Photos
+.container
+    .row
+        = form_for :image, method: 'post' do |f|
+            = f.file_field :picture
+            = f.submit "Submit"

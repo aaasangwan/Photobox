@@ -4,7 +4,9 @@ Photobox::Application.routes.draw do
 
   post 'image/add' => 'image#add_image'
   get 'image/show' => 'image#show'
-  get "image/index" => 'image#index'
+  get 'image/index' => 'image#index'
+  get 'image/upload' => 'image#upload'
+  post 'image/upload' => 'image#upload'
   root "image#index"
 
   # Example of regular route:
